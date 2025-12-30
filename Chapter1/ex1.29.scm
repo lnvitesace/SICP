@@ -1,0 +1,8 @@
+(define (ssum f a b n)
+    (define h (/ (- b a) n))
+    (define (g k)
+        (* (cond ((or (= k 0) (= k n)) 1)
+                 ((even? k) 2)
+                 (else 4))
+        (f (+ a (* k h)))))
+    (* (/ h 3) (sum g 0 inc n)))
