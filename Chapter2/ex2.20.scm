@@ -1,0 +1,7 @@
+(define (sp x . y)
+    (define (helper first rest)
+        (cond ((null? rest) nil)
+              (((if (odd? first) odd? even?) (car rest))
+                (cons (car rest) (helper first (cdr rest))))
+              (else (helper first (cdr rest)))))
+    (helper x y))
